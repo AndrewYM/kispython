@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="" style="font-size:20px" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+<style type="text/css">html {line-height: 1.5;font-family: Georgia, serif;font-size: 20px;color: #1a1a1a;background-color: #fdfdfd;}body {margin: 0 auto;max-width: 36em;padding-left: 50px;padding-right: 50px;padding-top: 50px;padding-bottom: 50px;hyphens: auto;overflow-wrap: break-word;text-rendering: optimizeLegibility;font-kerning: normal;}@media (max-width: 600px) {body {font-size: 0.9em;padding: 1em;}}@media print {body {background-color: transparent;color: black;font-size: 12pt;}p, h2, h3 {orphans: 3;widows: 3;}h2, h3, h4 {page-break-after: avoid;}}p {margin: 1em 0;}a {color: #1a1a1a;}a:visited {color: #1a1a1a;}img {max-width: 100%;}h1, h2, h3, h4, h5, h6 {margin-top: 1.4em;}h5, h6 {font-size: 1em;font-style: italic;}h6 {font-weight: normal;}ol, ul {padding-left: 1.7em;margin-top: 1em;}li > ol, li > ul {margin-top: 0;}blockquote {margin: 1em 0 1em 1.7em;padding-left: 1em;border-left: 2px solid #e6e6e6;color: #606060;}code {font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;font-size: 85%;margin: 0;}pre {margin: 1em 0;overflow: auto;}pre code {padding: 0;overflow: visible;overflow-wrap: normal;}.sourceCode {background-color: transparent;overflow: visible;}hr {background-color: #1a1a1a;border: none;height: 1px;margin: 1em 0;}table {margin-bottom: 2em;border-bottom: 1px solid #ddd;border-right: 1px solid #ddd;border-spacing: 0;border-collapse: collapse;}table th {padding: .2em 1em;background-color: #eee;border-top: 1px solid #ddd;border-left: 1px solid #ddd;}table td {padding: .2em 1em;border-top: 1px solid #ddd;border-left: 1px solid #ddd;vertical-align: top;}header {margin-bottom: 4em;text-align: center;}#TOC li {list-style: none;}#TOC a:not(:hover) {text-decoration: none;}code{white-space: pre-wrap;}span.smallcaps{font-variant: small-caps;}span.underline{text-decoration: underline;}div.column{display: inline-block; vertical-align: top; width: 50%;}div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}ul.task-list{list-style: none;}</style>
+<!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+
+<style>
+.math.inline > img {
+    vertical-align: middle;
+}
+</style>
+</head>
+<body>
+<p><strong>Задача №10</strong></p>
+<p>Реализовать функцию преобразования табличных данных. Входная и
+выходная таблицы заданы в построчной форме, с помощью списков.
+Заполненные ячейки имеют строковой тип данных. Пустые ячейки имеют
+значение None.</p>
+<p>Округления производятся стандартно, с помощью функции round.</p>
+<p>Над входной таблицей провести ряд преобразований:</p>
+<ol type="1">
+<li>Удалить пустые столбцы.</li>
+<li>Преобразовать содержимое ячеек по примерам.</li>
+</ol>
+<p>Примеры табличных преобразований:</p>
+<p><em>Пример 1</em></p>
+<p>Исходная таблица:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>В.Т. Разатев</code></td>
+<td style="text-align: center;"><code>(407) 872-3460</code></td>
+<td style="text-align: center;"><code>razatev36[at]yandex.ru</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>Д.Ф. Видечин</code></td>
+<td style="text-align: center;"><code>(335) 070-2210</code></td>
+<td style="text-align: center;"><code>videcin19[at]yandex.ru</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>Г.Ш. Мулко</code></td>
+<td style="text-align: center;"><code>(053) 832-3096</code></td>
+<td style="text-align: center;"><code>mulko39[at]yandex.ru</code></td>
+</tr>
+</tbody>
+</table>
+<p>Результат преобразования:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>Да</code></td>
+<td style="text-align: center;"><code>Разатев</code></td>
+<td style="text-align: center;"><code>4078723460</code></td>
+<td style="text-align: center;"><code>razatev36</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>Нет</code></td>
+<td style="text-align: center;"><code>Видечин</code></td>
+<td style="text-align: center;"><code>3350702210</code></td>
+<td style="text-align: center;"><code>videcin19</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>Да</code></td>
+<td style="text-align: center;"><code>Мулко</code></td>
+<td style="text-align: center;"><code>0538323096</code></td>
+<td style="text-align: center;"><code>mulko39</code></td>
+</tr>
+</tbody>
+</table>
+<p><em>Пример 2</em></p>
+<p>Исходная таблица:</p>
+<table>
+<colgroup>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+<th style="text-align: center;">5</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>В.Ч. Фушовин</code></td>
+<td style="text-align: center;"><code>(106) 582-7149</code></td>
+<td style="text-align: center;"><code>fusovin77[at]rambler.ru</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>0</code></td>
+<td style="text-align: center;"><code>А.Р. Цацалий</code></td>
+<td style="text-align: center;"><code>(264) 520-8252</code></td>
+<td style="text-align: center;"><code>zazalij9[at]yahoo.com</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>Г.А. Лелич</code></td>
+<td style="text-align: center;"><code>(114) 228-6889</code></td>
+<td style="text-align: center;"><code>lelic32[at]gmail.com</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><code>1</code></td>
+<td style="text-align: center;"><code>Е.Б. Дубасман</code></td>
+<td style="text-align: center;"><code>(398) 131-9106</code></td>
+<td style="text-align: center;"><code>dubasman64[at]yandex.ru</code></td>
+</tr>
+</tbody>
+</table>
+<p>Результат преобразования:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">1</th>
+<th style="text-align: center;">2</th>
+<th style="text-align: center;">3</th>
+<th style="text-align: center;">4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>Нет</code></td>
+<td style="text-align: center;"><code>Фушовин</code></td>
+<td style="text-align: center;"><code>1065827149</code></td>
+<td style="text-align: center;"><code>fusovin77</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>Нет</code></td>
+<td style="text-align: center;"><code>Цацалий</code></td>
+<td style="text-align: center;"><code>2645208252</code></td>
+<td style="text-align: center;"><code>zazalij9</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>Да</code></td>
+<td style="text-align: center;"><code>Лелич</code></td>
+<td style="text-align: center;"><code>1142286889</code></td>
+<td style="text-align: center;"><code>lelic32</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>Да</code></td>
+<td style="text-align: center;"><code>Дубасман</code></td>
+<td style="text-align: center;"><code>3981319106</code></td>
+<td style="text-align: center;"><code>dubasman64</code></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
