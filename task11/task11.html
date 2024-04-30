@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="" style="font-size:20px" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+</style>
+<!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+<style>
+.math.inline > img {
+    vertical-align: middle;
+}
+</style>
+
+<style>
+.math.inline > img {
+    vertical-align: middle;
+}
+</style>
+</head>
+<body>
+<p><strong>Задача №11</strong></p>
+<p>Реализовать конечный автомат Мили в виде класса. Начальным состоянием
+автомата является A. Методы возвращают числовые значения.</p>
+<p>Если вызываемый метод не реализован для некоторого состояния,
+необходимо вызвать пользовательское исключение MealyError. При
+возникновении исключения должно передаваться имя метода, вызвавшего это
+исключение.</p>
+<p>Реализовать в отдельной функции <code>test</code> автоматическое
+тестирование автомата Мили на основе покрытия ветвей. Требуемая степень
+покрытия: 100%.</p>
+<p><img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+DQo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iDQogImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8IS0tIEdlbmVyYXRlZCBieSBncmFwaHZpeiB2ZXJzaW9uIDkuMC4wICgyMDIzMDkxMS4xODI3KQ0KIC0tPg0KPCEtLSBUaXRsZTogRyBQYWdlczogMSAtLT4NCjxzdmcgd2lkdGg9IjI0NXB0IiBoZWlnaHQ9IjU3MXB0Ig0KIHZpZXdCb3g9IjAuMDAgMC4wMCAyNDQuNTAgNTcwLjUwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4NCjxnIGlkPSJncmFwaDAiIGNsYXNzPSJncmFwaCIgdHJhbnNmb3JtPSJzY2FsZSgxIDEpIHJvdGF0ZSgwKSB0cmFuc2xhdGUoNCA1NjYuNSkiPg0KPHRpdGxlPkc8L3RpdGxlPg0KPHBvbHlnb24gZmlsbD0id2hpdGUiIHN0cm9rZT0ibm9uZSIgcG9pbnRzPSItNCw0IC00LC01NjYuNSAyNDAuNSwtNTY2LjUgMjQwLjUsNCAtNCw0Ii8+DQo8IS0tIG42IC0tPg0KPGcgaWQ9Im5vZGUxIiBjbGFzcz0ibm9kZSI+DQo8dGl0bGU+bjY8L3RpdGxlPg0KPGVsbGlwc2UgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgY3g9IjE0MSIgY3k9Ii01NDQuNSIgcng9IjE4IiByeT0iMTgiLz4NCjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjE0MSIgeT0iLTUzOS4wOCIgZm9udC1mYW1pbHk9IlRpbWVzIE5ldyBSb21hbixzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+QTwvdGV4dD4NCjwvZz4NCjwhLS0gbjQgLS0+DQo8ZyBpZD0ibm9kZTIiIGNsYXNzPSJub2RlIj4NCjx0aXRsZT5uNDwvdGl0bGU+DQo8ZWxsaXBzZSBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBjeD0iOTQiIGN5PSItNDU2Ljc1IiByeD0iMTgiIHJ5PSIxOCIvPg0KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iOTQiIHk9Ii00NTEuMzIiIGZvbnQtZmFtaWx5PSJUaW1lcyBOZXcgUm9tYW4sc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPkI8L3RleHQ+DQo8L2c+DQo8IS0tIG42JiM0NTsmZ3Q7bjQgLS0+DQo8ZyBpZD0iZWRnZTEiIGNsYXNzPSJlZGdlIj4NCjx0aXRsZT5uNiYjNDU7Jmd0O240PC90aXRsZT4NCjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0xMzIuNiwtNTI4LjE3QzEyNS43MSwtNTE1LjYxIDExNS44MywtNDk3LjU4IDEwNy43OSwtNDgyLjkxIi8+DQo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIxMTAuOTMsLTQ4MS4zNiAxMDMuMDYsLTQ3NC4yNyAxMDQuNzksLTQ4NC43MyAxMTAuOTMsLTQ4MS4zNiIvPg0KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMTQzLjc1IiB5PSItNDk1LjIiIGZvbnQtZmFtaWx5PSJUaW1lcyBOZXcgUm9tYW4sc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPi5zaXQoKSAvIDA8L3RleHQ+DQo8L2c+DQo8IS0tIG4wIC0tPg0KPGcgaWQ9Im5vZGUzIiBjbGFzcz0ibm9kZSI+DQo8dGl0bGU+bjA8L3RpdGxlPg0KPGVsbGlwc2UgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgY3g9IjEzNiIgY3k9Ii0zNjkiIHJ4PSIxOCIgcnk9IjE4Ii8+DQo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxMzYiIHk9Ii0zNjMuNTciIGZvbnQtZmFtaWx5PSJUaW1lcyBOZXcgUm9tYW4sc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPkM8L3RleHQ+DQo8L2c+DQo8IS0tIG40JiM0NTsmZ3Q7bjAgLS0+DQo8ZyBpZD0iZWRnZTIiIGNsYXNzPSJlZGdlIj4NCjx0aXRsZT5uNCYjNDU7Jmd0O24wPC90aXRsZT4NCjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0xMDEuNywtNDQwLjAyQzEwNy43NCwtNDI3LjY5IDExNi4yNywtNDEwLjI4IDEyMy4zMiwtMzk1LjkiLz4NCjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjEyNi40MiwtMzk3LjUxIDEyNy42OCwtMzg2Ljk5IDEyMC4xNCwtMzk0LjQzIDEyNi40MiwtMzk3LjUxIi8+DQo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxNDYuMzgiIHk9Ii00MDcuNDUiIGZvbnQtZmFtaWx5PSJUaW1lcyBOZXcgUm9tYW4sc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPi5jb2F0KCkgLyAxPC90ZXh0Pg0KPC9nPg0KPCEtLSBuMSAtLT4NCjxnIGlkPSJub2RlNSIgY2xhc3M9Im5vZGUiPg0KPHRpdGxlPm4xPC90aXRsZT4NCjxlbGxpcHNlIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGN4PSI3NyIgY3k9Ii0xOTMuNSIgcng9IjE4IiByeT0iMTgiLz4NCjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9Ijc3IiB5PSItMTg4LjA3IiBmb250LWZhbWlseT0iVGltZXMgTmV3IFJvbWFuLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj5FPC90ZXh0Pg0KPC9nPg0KPCEtLSBuNCYjNDU7Jmd0O24xIC0tPg0KPGcgaWQ9ImVkZ2U0IiBjbGFzcz0iZWRnZSI+DQo8dGl0bGU+bjQmIzQ1OyZndDtuMTwvdGl0bGU+DQo8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9ImJsYWNrIiBkPSJNOTIuODgsLTQzOC42MUM5MC4wMiwtMzk0LjYgODIuMzksLTI3Ny4yOCA3OC44NSwtMjIyLjkiLz4NCjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjgyLjM2LC0yMjIuOTcgNzguMjIsLTIxMy4yMSA3NS4zNywtMjIzLjQyIDgyLjM2LC0yMjIuOTciLz4NCjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEwNy43NSIgeT0iLTMxOS43IiBmb250LWZhbWlseT0iVGltZXMgTmV3IFJvbWFuLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4uc2l0KCkgLyAzPC90ZXh0Pg0KPC9nPg0KPCEtLSBuMiAtLT4NCjxnIGlkPSJub2RlNiIgY2xhc3M9Im5vZGUiPg0KPHRpdGxlPm4yPC90aXRsZT4NCjxlbGxpcHNlIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGN4PSIxOCIgY3k9Ii0xMDUuNzUiIHJ4PSIxOCIgcnk9IjE4Ii8+DQo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxOCIgeT0iLTEwMC4zMyIgZm9udC1mYW1pbHk9IlRpbWVzIE5ldyBSb21hbixzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+RjwvdGV4dD4NCjwvZz4NCjwhLS0gbjQmIzQ1OyZndDtuMiAtLT4NCjxnIGlkPSJlZGdlMyIgY2xhc3M9ImVkZ2UiPg0KPHRpdGxlPm40JiM0NTsmZ3Q7bjI8L3RpdGxlPg0KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTc3LjU1LC00NDkuMzJDNTEuMDksLTQzNy43NiAyLC00MTAuODMgMiwtMzcwIDIsLTM3MCAyLC0zNzAgMiwtMTkyLjUgMiwtMTcyLjg4IDYuMSwtMTUxLjE2IDEwLjE1LC0xMzQuNDgiLz4NCjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjEzLjUzLC0xMzUuMzYgMTIuNjUsLTEyNC44IDYuNzYsLTEzMy42MSAxMy41MywtMTM1LjM2Ii8+DQo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIyNS4yNSIgeT0iLTI3NS44MiIgZm9udC1mYW1pbHk9IlRpbWVzIE5ldyBSb21hbixzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+LnRhaWwoKSAvIDI8L3RleHQ+DQo8L2c+DQo8IS0tIG41IC0tPg0KPGcgaWQ9Im5vZGU0IiBjbGFzcz0ibm9kZSI+DQo8dGl0bGU+bjU8L3RpdGxlPg0KPGVsbGlwc2UgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgY3g9IjE0NCIgY3k9Ii0yODEuMjUiIHJ4PSIxOCIgcnk9IjE4Ii8+DQo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxNDQiIHk9Ii0yNzUuODIiIGZvbnQtZmFtaWx5PSJUaW1lcyBOZXcgUm9tYW4sc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPkQ8L3RleHQ+DQo8L2c+DQo8IS0tIG4wJiM0NTsmZ3Q7bjUgLS0+DQo8ZyBpZD0iZWRnZTUiIGNsYXNzPSJlZGdlIj4NCjx0aXRsZT5uMCYjNDU7Jmd0O241PC90aXRsZT4NCjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0xMzcuNjIsLTM1MC42NUMxMzguNjgsLTMzOS4yNiAxNDAuMSwtMzI0LjA5IDE0MS4zMiwtMzEwLjkzIi8+DQo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSIxNDQuOCwtMzExLjM3IDE0Mi4yNCwtMzAxLjA4IDEzNy44MywtMzEwLjcyIDE0NC44LC0zMTEuMzciLz4NCjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjE2NC4yNSIgeT0iLTMxOS43IiBmb250LWZhbWlseT0iVGltZXMgTmV3IFJvbWFuLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4udGFpbCgpIC8gNDwvdGV4dD4NCjwvZz4NCjwhLS0gbjUmIzQ1OyZndDtuNiAtLT4NCjxnIGlkPSJlZGdlNyIgY2xhc3M9ImVkZ2UiPg0KPHRpdGxlPm41JiM0NTsmZ3Q7bjY8L3RpdGxlPg0KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTE2MC4yNywtMjg5LjQ2QzE3MS4xNSwtMjk1LjI1IDE4NC42MSwtMzA0LjUyIDE5MSwtMzE3LjI1IDE5NC4xNCwtMzIzLjUxIDE5MS40NCwtMzI2LjAxIDE5MSwtMzMzIDE4Ni4xLC00MTEuNDYgMTk5LjU5LC00MzYuMDkgMTY5LC01MDguNSAxNjYuOTMsLTUxMy4zOSAxNjMuOTgsLTUxOC4xNiAxNjAuNzYsLTUyMi41MiIvPg0KPHBvbHlnb24gZmlsbD0iYmxhY2siIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iMTU4LjEzLC01MjAuMjEgMTU0LjQ4LC01MzAuMTYgMTYzLjU0LC01MjQuNjYgMTU4LjEzLC01MjAuMjEiLz4NCjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjIxMy4yNSIgeT0iLTQwNy40NSIgZm9udC1mYW1pbHk9IlRpbWVzIE5ldyBSb21hbixzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+LnRhaWwoKSAvIDY8L3RleHQ+DQo8L2c+DQo8IS0tIG41JiM0NTsmZ3Q7bjEgLS0+DQo8ZyBpZD0iZWRnZTYiIGNsYXNzPSJlZGdlIj4NCjx0aXRsZT5uNSYjNDU7Jmd0O24xPC90aXRsZT4NCjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0xMzMuMjQsLTI2Ni40N0MxMjIuODgsLTI1My4yMiAxMDcuMDQsLTIzMi45NSA5NC44MSwtMjE3LjI5Ii8+DQo8cG9seWdvbiBmaWxsPSJibGFjayIgc3Ryb2tlPSJibGFjayIgcG9pbnRzPSI5Ny41OCwtMjE1LjE2IDg4LjY3LC0yMDkuNDQgOTIuMDcsLTIxOS40NyA5Ny41OCwtMjE1LjE2Ii8+DQo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIxMzguNzUiIHk9Ii0yMzEuOTUiIGZvbnQtZmFtaWx5PSJUaW1lcyBOZXcgUm9tYW4sc2VyaWYiIGZvbnQtc2l6ZT0iMTQuMDAiPi5zaXQoKSAvIDU8L3RleHQ+DQo8L2c+DQo8IS0tIG4xJiM0NTsmZ3Q7bjEgLS0+DQo8ZyBpZD0iZWRnZTkiIGNsYXNzPSJlZGdlIj4NCjx0aXRsZT5uMSYjNDU7Jmd0O24xPC90aXRsZT4NCjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik05My42NiwtMjAxLjIxQzEwMy42MiwtMjAyLjkzIDExMywtMjAwLjM2IDExMywtMTkzLjUgMTEzLC0xODkuNDMgMTA5LjY5LC0xODYuODcgMTA0LjkyLC0xODUuODIiLz4NCjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjEwNS4xOSwtMTgyLjMyIDk1LjE4LC0xODUuNzkgMTA1LjE3LC0xODkuMzIgMTA1LjE5LC0xODIuMzIiLz4NCjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjEzNC43NSIgeT0iLTE4OC4wNyIgZm9udC1mYW1pbHk9IlRpbWVzIE5ldyBSb21hbixzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+LnNpdCgpIC8gODwvdGV4dD4NCjwvZz4NCjwhLS0gbjEmIzQ1OyZndDtuMiAtLT4NCjxnIGlkPSJlZGdlOCIgY2xhc3M9ImVkZ2UiPg0KPHRpdGxlPm4xJiM0NTsmZ3Q7bjI8L3RpdGxlPg0KPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgZD0iTTY2Ljk5LC0xNzcuOTVDNTguMDQsLTE2NC45NCA0NC43NSwtMTQ1LjYyIDM0LjI3LC0xMzAuMzkiLz4NCjxwb2x5Z29uIGZpbGw9ImJsYWNrIiBzdHJva2U9ImJsYWNrIiBwb2ludHM9IjM3LjI3LC0xMjguNTggMjguNzIsLTEyMi4zMyAzMS41LC0xMzIuNTUgMzcuMjcsLTEyOC41OCIvPg0KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iODAuMzgiIHk9Ii0xNDQuMiIgZm9udC1mYW1pbHk9IlRpbWVzIE5ldyBSb21hbixzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+LmNvYXQoKSAvIDc8L3RleHQ+DQo8L2c+DQo8IS0tIG4zIC0tPg0KPGcgaWQ9Im5vZGU3IiBjbGFzcz0ibm9kZSI+DQo8dGl0bGU+bjM8L3RpdGxlPg0KPGVsbGlwc2UgZmlsbD0ibm9uZSIgc3Ryb2tlPSJibGFjayIgY3g9IjE4IiBjeT0iLTE4IiByeD0iMTgiIHJ5PSIxOCIvPg0KPHRleHQgdGV4dC1hbmNob3I9Im1pZGRsZSIgeD0iMTgiIHk9Ii0xMi41NyIgZm9udC1mYW1pbHk9IlRpbWVzIE5ldyBSb21hbixzZXJpZiIgZm9udC1zaXplPSIxNC4wMCI+RzwvdGV4dD4NCjwvZz4NCjwhLS0gbjImIzQ1OyZndDtuMyAtLT4NCjxnIGlkPSJlZGdlMTAiIGNsYXNzPSJlZGdlIj4NCjx0aXRsZT5uMiYjNDU7Jmd0O24zPC90aXRsZT4NCjxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iYmxhY2siIGQ9Ik0xOCwtODcuNEMxOCwtNzYuMDEgMTgsLTYwLjg0IDE4LC00Ny42OCIvPg0KPHBvbHlnb24gZmlsbD0iYmxhY2siIHN0cm9rZT0iYmxhY2siIHBvaW50cz0iMjEuNSwtNDcuODQgMTgsLTM3Ljg0IDE0LjUsLTQ3Ljg0IDIxLjUsLTQ3Ljg0Ii8+DQo8dGV4dCB0ZXh0LWFuY2hvcj0ibWlkZGxlIiB4PSIzOS43NSIgeT0iLTU2LjQ1IiBmb250LWZhbWlseT0iVGltZXMgTmV3IFJvbWFuLHNlcmlmIiBmb250LXNpemU9IjE0LjAwIj4uc2l0KCkgLyA5PC90ZXh0Pg0KPC9nPg0KPC9nPg0KPC9zdmc+DQo="/></p>
+<p>В примерах ниже функция main возвращает объект созданного класса.
+Далее последовательно вызываются методы полученного объекта.</p>
+<p><em>Пример 1</em></p>
+<pre><code>o = main()
+o.sit() # 0
+o.coat() # 1
+o.tail() # 4
+o.tail() # 6
+o.sit() # 0
+o.coat() # 1
+o.tail() # 4
+o.sit() # 5
+o.sit() # 8
+o.sit() # 8
+o.coat() # 7
+o.sit() # 9</code></pre>
+<p><em>Пример 2</em></p>
+<pre><code>o = main()
+o.sit() # 0
+o.coat() # 1
+o.tail() # 4
+o.tail() # 6
+o.sit() # 0
+o.sit() # 3
+o.sit() # 8
+o.coat() # 7
+o.tail() # MealyError
+o.sit() # 9</code></pre>
+</body>
+</html>
