@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>ИНБО-05-22</title>
+  <style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">html {line-height: 1.5;font-family: Georgia, serif;font-size: 20px;color: #1a1a1a;background-color: #fdfdfd;}body {margin: 0 auto;max-width: 36em;padding-left: 50px;padding-right: 50px;padding-top: 50px;padding-bottom: 50px;hyphens: auto;overflow-wrap: break-word;text-rendering: optimizeLegibility;font-kerning: normal;}@media (max-width: 600px) {body {font-size: 0.9em;padding: 1em;}}@media print {body {background-color: transparent;color: black;font-size: 12pt;}p, h2, h3 {orphans: 3;widows: 3;}h2, h3, h4 {page-break-after: avoid;}}p {margin: 1em 0;}a {color: #1a1a1a;}a:visited {color: #1a1a1a;}img {max-width: 100%;}h1, h2, h3, h4, h5, h6 {margin-top: 1.4em;}h5, h6 {font-size: 1em;font-style: italic;}h6 {font-weight: normal;}ol, ul {padding-left: 1.7em;margin-top: 1em;}li > ol, li > ul {margin-top: 0;}blockquote {margin: 1em 0 1em 1.7em;padding-left: 1em;border-left: 2px solid #e6e6e6;color: #606060;}code {font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;font-size: 85%;margin: 0;}pre {margin: 1em 0;overflow: auto;}pre code {padding: 0;overflow: visible;overflow-wrap: normal;}.sourceCode {background-color: transparent;overflow: visible;}hr {background-color: #1a1a1a;border: none;height: 1px;margin: 1em 0;}table {margin-bottom: 2em;border-bottom: 1px solid #ddd;border-right: 1px solid #ddd;border-spacing: 0;border-collapse: collapse;}table th {padding: .2em 1em;background-color: #eee;border-top: 1px solid #ddd;border-left: 1px solid #ddd;}table td {padding: .2em 1em;border-top: 1px solid #ddd;border-left: 1px solid #ddd;vertical-align: top;}header {margin-bottom: 4em;text-align: center;}#TOC li {list-style: none;}#TOC a:not(:hover) {text-decoration: none;}code{white-space: pre-wrap;}span.smallcaps{font-variant: small-caps;}span.underline{text-decoration: underline;}div.column{display: inline-block; vertical-align: top; width: 50%;}div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}ul.task-list{list-style: none;}</style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<p><strong>Задача №12</strong></p>
+<p>Реализовать разбор двоичного формата данных. Данные начинаются с сигнатуры <code>0x25 0x4b 0x46 0x5a</code>, за которой следует структура
+A. Порядок байт: от старшего к младшему. Адреса указаны в виде смещений от начала данных. В решении предлагается использовать модуль
+struct.</p>
+<p>Структура A:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Поле</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td>uint16</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td>Массив структур B, размер 3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td>Массив char, размер 2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td>Адрес (uint16) структуры C</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td>int32</td>
+</tr>
+</tbody>
+</table>
+<p>Структура B:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Поле</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td>int16</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td>uint32</td>
+</tr>
+</tbody>
+</table>
+<p>Структура C:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Поле</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td>uint8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td>int8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td>int16</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td>Структура D</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td>float</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td>uint64</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td>float</td>
+</tr>
+</tbody>
+</table>
+<p>Структура D:</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Поле</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td>Массив uint16, размер 7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2</td>
+<td>uint8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td>Размер (uint16) и адрес (uint32) массива int8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">4</td>
+<td>uint16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">5</td>
+<td>uint8</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">6</td>
+<td>Массив uint16, размер 7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">7</td>
+<td>uint64</td>
+</tr>
+</tbody>
+</table>
+<p>Ниже показаны примеры разбора двоичного формата.</p>
+<p><em>Пример 1</em></p>
+<p>Двоичные данные:</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>(<span class="st">b&#39;%KFZ:l</span><span class="ch">\x16</span><span class="st">q</span><span class="ch">\xd6\xd9\x7f</span><span class="st">.9</span><span class="ch">\x0c\xa2\xce\xfc\x9d\xf0\xa8</span><span class="st">.</span><span class="ch">\x84\xf7\xb3</span><span class="st">xh</span><span class="ch">\x00</span><span class="st">#&#39;</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a> <span class="st">b&#39;</span><span class="ch">\xd1</span><span class="st">?Qz&quot;B</span><span class="ch">\x81\xa3\xd3</span><span class="st">0E</span><span class="ch">\xde\xf9</span><span class="st">!</span><span class="ch">\xd9\xbb\x87</span><span class="st">m$M</span><span class="ch">\x80\x8c\x93</span><span class="st">1^</span><span class="ch">\xb4\x00\x03</span><span class="st">&#39;</span></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a> <span class="st">b&quot;</span><span class="ch">\x00\x00\x00</span><span class="st"> 4</span><span class="ch">\x11</span><span class="st">&#39;</span><span class="ch">\xff</span><span class="st">y</span><span class="ch">\xa5\xd9\xf1</span><span class="st">q$</span><span class="ch">\x07</span><span class="st">k</span><span class="ch">\x9e</span><span class="st">&lt;D</span><span class="ch">\x82\x18</span><span class="st">8D</span><span class="ch">\xa0\xbb\x8d</span><span class="st">4</span><span class="ch">\xa8</span><span class="st">&quot;</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a> <span class="st">b&#39;=&gt;</span><span class="ch">\x14\xfa</span><span class="st">L(m</span><span class="ch">\xb6\x0c</span><span class="st">+&quot;T=?</span><span class="ch">\\</span><span class="st">W</span><span class="ch">\x97</span><span class="st">&#39;</span>)</span></code></pre></div>
+<p>Результат разбора:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">&#39;A1&#39;</span>: <span class="dv">14956</span>,</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a> <span class="st">&#39;A2&#39;</span>: [{<span class="st">&#39;B1&#39;</span>: <span class="dv">5745</span>, <span class="st">&#39;B2&#39;</span>: <span class="dv">3604578094</span>},</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>        {<span class="st">&#39;B1&#39;</span>: <span class="dv">14604</span>, <span class="st">&#39;B2&#39;</span>: <span class="dv">2731474077</span>},</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>        {<span class="st">&#39;B1&#39;</span>: <span class="op">-</span><span class="dv">3928</span>, <span class="st">&#39;B2&#39;</span>: <span class="dv">780466099</span>}],</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a> <span class="st">&#39;A3&#39;</span>: <span class="st">&#39;xh&#39;</span>,</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a> <span class="st">&#39;A4&#39;</span>: {<span class="st">&#39;C1&#39;</span>: <span class="dv">163</span>,</span>
+<span id="cb50-7"><a href="#cb50-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;C2&#39;</span>: <span class="op">-</span><span class="dv">45</span>,</span>
+<span id="cb50-8"><a href="#cb50-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;C3&#39;</span>: <span class="dv">12357</span>,</span>
+<span id="cb50-9"><a href="#cb50-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;C4&#39;</span>: {<span class="st">&#39;D1&#39;</span>: [<span class="dv">57081</span>, <span class="dv">8665</span>, <span class="dv">48007</span>, <span class="dv">27940</span>, <span class="dv">19840</span>, <span class="dv">35987</span>, <span class="dv">12638</span>],</span>
+<span id="cb50-10"><a href="#cb50-10" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;D2&#39;</span>: <span class="dv">180</span>,</span>
+<span id="cb50-11"><a href="#cb50-11" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;D3&#39;</span>: [<span class="dv">34</span>, <span class="dv">66</span>, <span class="op">-</span><span class="dv">127</span>],</span>
+<span id="cb50-12"><a href="#cb50-12" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;D4&#39;</span>: <span class="dv">13329</span>,</span>
+<span id="cb50-13"><a href="#cb50-13" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;D5&#39;</span>: <span class="dv">39</span>,</span>
+<span id="cb50-14"><a href="#cb50-14" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;D6&#39;</span>: [<span class="dv">65401</span>, <span class="dv">42457</span>, <span class="dv">61809</span>, <span class="dv">9223</span>, <span class="dv">27550</span>, <span class="dv">15428</span>, <span class="dv">33304</span>],</span>
+<span id="cb50-15"><a href="#cb50-15" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;D7&#39;</span>: <span class="dv">4054542291928655933</span>},</span>
+<span id="cb50-16"><a href="#cb50-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;C5&#39;</span>: <span class="fl">0.14548605680465698</span>,</span>
+<span id="cb50-17"><a href="#cb50-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;C6&#39;</span>: <span class="dv">2913184697358111805</span>,</span>
+<span id="cb50-18"><a href="#cb50-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;C7&#39;</span>: <span class="fl">0.8607115149497986</span>},</span>
+<span id="cb50-19"><a href="#cb50-19" aria-hidden="true" tabindex="-1"></a> <span class="st">&#39;A5&#39;</span>: <span class="op">-</span><span class="dv">784379526</span>}</span></code></pre></div>
+<p><em>Пример 2</em></p>
+<p>Двоичные данные:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>(<span class="st">b&#39;%KFZ</span><span class="ch">\xc7\xc8</span><span class="st">A</span><span class="ch">\xf1\x00\x1c\xd2\x0e\x13\xd7</span><span class="st">_M9|&lt;</span><span class="ch">\x82</span><span class="st">__</span><span class="ch">\xc5</span><span class="st">kmy</span><span class="ch">\x00</span><span class="st">$}</span><span class="ch">\x94\xed</span><span class="st">J&#39;</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a> <span class="st">b&#39;</span><span class="ch">\xa8\xd7\x15\x1c\x90</span><span class="st">]</span><span class="ch">\xac\xb7\xa8</span><span class="st">_</span><span class="ch">\xdd</span><span class="st">$</span><span class="ch">\xf6\xc0</span><span class="st">5</span><span class="ch">\xc1</span><span class="st">s</span><span class="ch">\xb1\x00\x80\xc5</span><span class="st">Q7</span><span class="ch">\x00</span><span class="st">&#39;</span></span>
+<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a> <span class="st">b&#39;</span><span class="ch">\x04\x00\x00\x00</span><span class="st"> </span><span class="ch">\\</span><span class="st">g</span><span class="ch">\xf1</span><span class="st">2</span><span class="ch">\x07\xb7\x9d\x8e</span><span class="st">J@</span><span class="ch">\xf6</span><span class="st">6</span><span class="ch">\xb6\x82</span><span class="st">;M</span><span class="ch">\xa6\x86</span><span class="st">k&#39;</span></span>
+<span id="cb51-4"><a href="#cb51-4" aria-hidden="true" tabindex="-1"></a> <span class="st">b&#39;=</span><span class="ch">\xa3</span><span class="st">9</span><span class="ch">\x0e\xc1\xe1</span><span class="st">?V</span><span class="ch">\x18</span><span class="st">2</span><span class="ch">\xc8\xa0\xcb\x0b\xc1\x8c</span><span class="st">@j</span><span class="ch">\xbf</span><span class="st">Ls</span><span class="ch">\xf8</span><span class="st">&#39;</span>)</span></code></pre></div>
+<p>Результат разбора:</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>{<span class="st">&#39;A1&#39;</span>: <span class="dv">51144</span>,</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a> <span class="st">&#39;A2&#39;</span>: [{<span class="st">&#39;B1&#39;</span>: <span class="dv">16881</span>, <span class="st">&#39;B2&#39;</span>: <span class="dv">1888782</span>},</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a>        {<span class="st">&#39;B1&#39;</span>: <span class="dv">5079</span>, <span class="st">&#39;B2&#39;</span>: <span class="dv">1598896508</span>},</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>        {<span class="st">&#39;B1&#39;</span>: <span class="dv">15490</span>, <span class="st">&#39;B2&#39;</span>: <span class="dv">1600111979</span>}],</span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a> <span class="st">&#39;A3&#39;</span>: <span class="st">&#39;my&#39;</span>,</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a> <span class="st">&#39;A4&#39;</span>: {<span class="st">&#39;C1&#39;</span>: <span class="dv">144</span>,</span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;C2&#39;</span>: <span class="dv">93</span>,</span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;C3&#39;</span>: <span class="op">-</span><span class="dv">21321</span>,</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;C4&#39;</span>: {<span class="st">&#39;D1&#39;</span>: [<span class="dv">43103</span>, <span class="dv">56612</span>, <span class="dv">63168</span>, <span class="dv">13761</span>, <span class="dv">29617</span>, <span class="dv">128</span>, <span class="dv">50513</span>],</span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;D2&#39;</span>: <span class="dv">55</span>,</span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;D3&#39;</span>: [<span class="op">-</span><span class="dv">88</span>, <span class="op">-</span><span class="dv">41</span>, <span class="dv">21</span>, <span class="dv">28</span>],</span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;D4&#39;</span>: <span class="dv">23655</span>,</span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;D5&#39;</span>: <span class="dv">241</span>,</span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;D6&#39;</span>: [<span class="dv">12807</span>, <span class="dv">47005</span>, <span class="dv">36426</span>, <span class="dv">16630</span>, <span class="dv">14006</span>, <span class="dv">33339</span>, <span class="dv">19878</span>],</span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a>               <span class="st">&#39;D7&#39;</span>: <span class="dv">9685903194836615649</span>},</span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;C5&#39;</span>: <span class="fl">0.8363066911697388</span>,</span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;C6&#39;</span>: <span class="dv">14456778055211565162</span>,</span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">&#39;C7&#39;</span>: <span class="op">-</span><span class="fl">0.7986445426940918</span>},</span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a> <span class="st">&#39;A5&#39;</span>: <span class="dv">2106912074</span>}</span></code></pre></div>
+</body>
+</html>
