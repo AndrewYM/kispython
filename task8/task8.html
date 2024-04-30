@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+
+<html lang="" style="font-size:20px" xml:lang="" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8"/>
+<meta content="pandoc" name="generator"/>
+<meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+<style>
+html {
+color: #1a1a1a;
+background-color: #fdfdfd;
+}
+body {
+margin: 0 auto;
+max-width: 36em;
+padding-left: 50px;
+padding-right: 50px;
+padding-top: 50px;
+padding-bottom: 50px;
+hyphens: auto;
+overflow-wrap: break-word;
+text-rendering: optimizeLegibility;
+font-kerning: normal;
+}
+@media (max-width: 600px) {
+body {
+font-size: 0.9em;
+padding: 12px;
+}
+h1 {
+font-size: 1.8em;
+}
+}
+@media print {
+html {
+background-color: white;
+}
+body {
+background-color: transparent;
+color: black;
+font-size: 12pt;
+}
+p, h2, h3 {
+orphans: 3;
+widows: 3;
+}
+h2, h3, h4 {
+page-break-after: avoid;
+}
+}
+p {
+margin: 1em 0;
+}
+a {
+color: #1a1a1a;
+}
+a:visited {
+color: #1a1a1a;
+}
+img {
+max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+margin-top: 1.4em;
+}
+h5, h6 {
+font-size: 1em;
+font-style: italic;
+}
+h6 {
+font-weight: normal;
+}
+ol, ul {
+padding-left: 1.7em;
+margin-top: 1em;
+}
+li > ol, li > ul {
+margin-top: 0;
+}
+blockquote {
+margin: 1em 0 1em 1.7em;
+padding-left: 1em;
+border-left: 2px solid #e6e6e6;
+color: #606060;
+}
+code {
+font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+font-size: 85%;
+margin: 0;
+hyphens: manual;
+}
+pre {
+margin: 1em 0;
+overflow: auto;
+}
+pre code {
+padding: 0;
+overflow: visible;
+overflow-wrap: normal;
+}
+.sourceCode {
+background-color: transparent;
+overflow: visible;
+}
+hr {
+background-color: #1a1a1a;
+border: none;
+height: 1px;
+margin: 1em 0;
+}
+table {
+margin: 1em 0;
+border-collapse: collapse;
+width: 100%;
+overflow-x: auto;
+display: block;
+font-variant-numeric: lining-nums tabular-nums;
+}
+table caption {
+margin-bottom: 0.75em;
+}
+tbody {
+margin-top: 0.5em;
+border-top: 1px solid #1a1a1a;
+border-bottom: 1px solid #1a1a1a;
+}
+th {
+border-top: 1px solid #1a1a1a;
+padding: 0.25em 0.5em 0.25em 0.5em;
+}
+td {
+padding: 0.125em 0.5em 0.25em 0.5em;
+}
+header {
+margin-bottom: 4em;
+text-align: center;
+}
+#TOC li {
+list-style: none;
+}
+#TOC ul {
+padding-left: 1.3em;
+}
+#TOC > ul {
+padding-left: 0;
+}
+#TOC a:not(:hover) {
+text-decoration: none;
+}
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+width: 0.8em;
+margin: 0 0.8em 0.2em -1.6em;
+vertical-align: middle;
+}
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+<!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+
+<style>
+.math.inline > img {
+    vertical-align: middle;
+}
+</style>
+</head>
+<body>
+<p><strong>Задача №8</strong></p>
+<p>Реализовать функцию для декодирования данных, содержащих битовые
+поля. В решении необходимо использовать побитовые операции.
+Неиспользуемые поля результата должны содержать нулевые биты.</p>
+<p><em>Входные данные</em>:</p>
+Десятичная строка.
+<div>
+<svg height="160" viewbox="0 0 640 160" width="640" xmlns="http://www.w3.org/2000/svg">
+<g font-family="sans-serif" font-size="14" font-weight="normal" text-anchor="middle" transform="translate(0.5,0.5)">
+<g transform="translate(4,101)">
+<g stroke="black" stroke-linecap="round" stroke-width="1">
+<line x2="631"></line> <line y2="55"></line> <line x2="631" y1="55" y2="55"></line>
+<line x1="631" x2="631" y2="55"></line> <line x1="599" x2="599" y2="6"></line>
+<line x1="599" x2="599" y1="55" y2="49"></line>
+<line x1="568" x2="568" y2="6"></line>
+<line x1="568" x2="568" y1="55" y2="49"></line>
+<line x1="536" x2="536" y2="6"></line>
+<line x1="536" x2="536" y1="55" y2="49"></line>
+<line x1="505" x2="505" y2="6"></line>
+<line x1="505" x2="505" y1="55" y2="49"></line>
+<line x1="473" x2="473" y2="6"></line>
+<line x1="473" x2="473" y1="55" y2="49"></line>
+<line x1="442" x2="442" y2="6"></line>
+<line x1="442" x2="442" y1="55" y2="49"></line>
+<line x1="410" x2="410" y2="6"></line>
+<line x1="410" x2="410" y1="55" y2="49"></line>
+<line x1="379" x2="379" y2="55"></line> <line x1="347" x2="347" y2="6"></line>
+<line x1="347" x2="347" y1="55" y2="49"></line>
+<line x1="316" x2="316" y2="6"></line>
+<line x1="316" x2="316" y1="55" y2="49"></line>
+<line x1="284" x2="284" y2="55"></line> <line x1="252" x2="252" y2="6"></line>
+<line x1="252" x2="252" y1="55" y2="49"></line>
+<line x1="221" x2="221" y2="6"></line>
+<line x1="221" x2="221" y1="55" y2="49"></line>
+<line x1="189" x2="189" y2="6"></line>
+<line x1="189" x2="189" y1="55" y2="49"></line>
+<line x1="158" x2="158" y2="55"></line> <line x1="126" x2="126" y2="6"></line>
+<line x1="126" x2="126" y1="55" y2="49"></line> <line x1="95" x2="95" y2="6"></line>
+<line x1="95" x2="95" y1="55" y2="49"></line> <line x1="63" x2="63" y2="6"></line>
+<line x1="63" x2="63" y1="55" y2="49"></line> <line x1="32" x2="32" y2="6"></line>
+<line x1="32" x2="32" y1="55" y2="49"></line> </g> <g> <g></g>
+<g transform="translate(16,-11)"> <g transform="translate(599)">
+<text y="6">0</text> </g> <g transform="translate(379)">
+<text y="6">7</text> </g> <g transform="translate(347)">
+<text y="6">8</text> </g> <g transform="translate(284)">
+<text y="6">10</text> </g> <g transform="translate(252)">
+<text y="6">11</text> </g> <g transform="translate(158)">
+<text y="6">14</text> </g> <g transform="translate(126)">
+<text y="6">15</text> </g> <g transform="translate(0)">
+<text y="6">19</text> </g> </g> <g transform="translate(16,27)">
+<g transform="translate(489)"> <text y="6"> <tspan>K1</tspan> </text>
+</g> <g transform="translate(316)"> <text y="6"> <tspan>K2</tspan>
+</text> </g> <g transform="translate(205)"> <text y="6">
+<tspan>K3</tspan> </text> </g> <g transform="translate(63)">
+<text y="6"> <tspan>K4</tspan> </text> </g> </g>
+<g transform="translate(16,63)"></g> </g> </g>
+<g transform="translate(4,21)">
+<g stroke="black" stroke-linecap="round" stroke-width="1">
+<line x2="631"></line> <line y2="55"></line> <line x2="631" y1="55" y2="55"></line>
+<line x1="631" x2="631" y2="55"></line> <line x1="599" x2="599" y2="6"></line>
+<line x1="599" x2="599" y1="55" y2="49"></line>
+<line x1="568" x2="568" y2="6"></line>
+<line x1="568" x2="568" y1="55" y2="49"></line>
+<line x1="536" x2="536" y2="6"></line>
+<line x1="536" x2="536" y1="55" y2="49"></line>
+<line x1="505" x2="505" y2="6"></line>
+<line x1="505" x2="505" y1="55" y2="49"></line>
+<line x1="473" x2="473" y2="55"></line> <line x1="442" x2="442" y2="6"></line>
+<line x1="442" x2="442" y1="55" y2="49"></line>
+<line x1="410" x2="410" y2="6"></line>
+<line x1="410" x2="410" y1="55" y2="49"></line>
+<line x1="379" x2="379" y2="6"></line>
+<line x1="379" x2="379" y1="55" y2="49"></line>
+<line x1="347" x2="347" y2="6"></line>
+<line x1="347" x2="347" y1="55" y2="49"></line>
+<line x1="316" x2="316" y2="55"></line> <line x1="284" x2="284" y2="6"></line>
+<line x1="284" x2="284" y1="55" y2="49"></line>
+<line x1="252" x2="252" y2="6"></line>
+<line x1="252" x2="252" y1="55" y2="49"></line>
+<line x1="221" x2="221" y2="6"></line>
+<line x1="221" x2="221" y1="55" y2="49"></line>
+<line x1="189" x2="189" y2="6"></line>
+<line x1="189" x2="189" y1="55" y2="49"></line>
+<line x1="158" x2="158" y2="6"></line>
+<line x1="158" x2="158" y1="55" y2="49"></line>
+<line x1="126" x2="126" y2="6"></line>
+<line x1="126" x2="126" y1="55" y2="49"></line> <line x1="95" x2="95" y2="6"></line>
+<line x1="95" x2="95" y1="55" y2="49"></line> <line x1="63" x2="63" y2="6"></line>
+<line x1="63" x2="63" y1="55" y2="49"></line> <line x1="32" x2="32" y2="6"></line>
+<line x1="32" x2="32" y1="55" y2="49"></line> </g> <g> <g>
+<rect field="undefined" height="55" style="fill-opacity:0.1" width="158" x="316"></rect>
+</g> <g transform="translate(16,-11)"> <g transform="translate(599)">
+<text y="6">20</text> </g> <g transform="translate(473)">
+<text y="6">24</text> </g> <g transform="translate(442)">
+<text y="6">25</text> </g> <g transform="translate(316)">
+<text y="6">29</text> </g> <g transform="translate(284)">
+<text y="6">30</text> </g> <g transform="translate(32)">
+<text y="6">38</text> </g> </g> <g transform="translate(16,27)">
+<g transform="translate(536)"> <text y="6"> <tspan>K4</tspan> </text>
+</g> <g transform="translate(158)"> <text y="6"> <tspan>K6</tspan>
+</text> </g> </g> <g transform="translate(16,63)"></g> </g> </g> </g>
+</svg>
+</div>
+<p><em>Выходные данные</em>:</p>
+<p>Список из битовых полей в виде пар имя-значение. Значения битовых
+полей имеют тип: целое.</p>
+<p><em>Тесты</em>:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb13-1"><a aria-hidden="true" href="#cb13-1" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> main(<span class="st">'77783434340'</span>)</span>
+<span id="cb13-2"><a aria-hidden="true" href="#cb13-2" tabindex="-1"></a>[(<span class="st">'K1'</span>, <span class="dv">100</span>), (<span class="st">'K2'</span>, <span class="dv">4</span>), (<span class="st">'K3'</span>, <span class="dv">0</span>), (<span class="st">'K4'</span>, <span class="dv">130</span>), (<span class="st">'K6'</span>, <span class="dv">72</span>)]</span>
+<span id="cb13-3"><a aria-hidden="true" href="#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a aria-hidden="true" href="#cb13-4" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> main(<span class="st">'518558599195'</span>)</span>
+<span id="cb13-5"><a aria-hidden="true" href="#cb13-5" tabindex="-1"></a>[(<span class="st">'K1'</span>, <span class="dv">27</span>), (<span class="st">'K2'</span>, <span class="dv">0</span>), (<span class="st">'K3'</span>, <span class="dv">9</span>), (<span class="st">'K4'</span>, <span class="dv">256</span>), (<span class="st">'K6'</span>, <span class="dv">482</span>)]</span>
+<span id="cb13-6"><a aria-hidden="true" href="#cb13-6" tabindex="-1"></a></span>
+<span id="cb13-7"><a aria-hidden="true" href="#cb13-7" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> main(<span class="st">'16283707795'</span>)</span>
+<span id="cb13-8"><a aria-hidden="true" href="#cb13-8" tabindex="-1"></a>[(<span class="st">'K1'</span>, <span class="dv">147</span>), (<span class="st">'K2'</span>, <span class="dv">1</span>), (<span class="st">'K3'</span>, <span class="dv">5</span>), (<span class="st">'K4'</span>, <span class="dv">299</span>), (<span class="st">'K6'</span>, <span class="dv">15</span>)]</span>
+<span id="cb13-9"><a aria-hidden="true" href="#cb13-9" tabindex="-1"></a></span>
+<span id="cb13-10"><a aria-hidden="true" href="#cb13-10" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> main(<span class="st">'54496750383'</span>)</span>
+<span id="cb13-11"><a aria-hidden="true" href="#cb13-11" tabindex="-1"></a>[(<span class="st">'K1'</span>, <span class="dv">47</span>), (<span class="st">'K2'</span>, <span class="dv">3</span>), (<span class="st">'K3'</span>, <span class="dv">13</span>), (<span class="st">'K4'</span>, <span class="dv">132</span>), (<span class="st">'K6'</span>, <span class="dv">50</span>)]</span></code></pre></div>
+</body>
+</html>
